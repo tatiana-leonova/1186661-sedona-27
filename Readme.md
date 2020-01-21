@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
 * Студент: [Tatiana Leonova](https://up.htmlacademy.ru/htmlcss/27/user/1186661).
-* Наставник: `Неизвестно`.
+* Наставник: [Евгений Петров](https://up.htmlacademy.ru/htmlcss/27/user/617077).
 
 ---
 
