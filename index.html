@@ -22,8 +22,7 @@
 </header>
 
 <main>
-  <h1 сlass="visually-hidden">Седона</h1>
-
+  <h1 class="visually-hidden">Седона</h1>
   <section>
     <h2>Добро пожаловать в Седону</h2>
     <img src="img/intro-welcome.svg" width="459" height="353" alt="Welcome to the gorgeous Sedona">
@@ -93,35 +92,24 @@
 
       <span class="number-input">
         <label for="adult">Взрослые:</label>
-  <button class="number-input__input number-input__input--button"
-          onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-          tabindex='-1'>-</button>
-  <input class="number-input__input"
-         type="number"
-         id="adult"
-         min="0"
-         max="10"
-         value="2">
-  <button class="number-input__input number-input__input--button"
-          onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-          tabindex='-1'>+</button>
-</span>
+        <button class="number-input__input number-input__input--button"
+                onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                tabindex='-1'>-</button>
+        <input class="number-input__input" type="number" id="adult" min="0" max="10" value="2">
+        <button class="number-input__input number-input__input--button"
+                onclick="this.parentNode.querySelector('input[type=number]').stepUp()" tabindex='-1'>+</button>
+      </span>
 
       <span class="number-input">
         <label for="children">Дети:</label>
-  <button class="number-input__input number-input__input--button"
-          onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-          tabindex='-1'>-</button>
-  <input class="number-input__input"
-         type="number"
-         id="children"
-         min="0"
-         max="10"
-         value="0">
-  <button class="number-input__input number-input__input--button"
-          onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-          tabindex='-1'>+</button>
-</span>
+        <button class="number-input__input number-input__input--button"
+                onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                tabindex='-1'>-</button>
+        <input class="number-input__input" type="number" id="children" min="0" max="10" value="0">
+        <button class="number-input__input number-input__input--button"
+                onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                tabindex='-1'>+</button>
+      </span>
       <button type="submit">Найти</button>
     </form>
     <figure>
