@@ -78,16 +78,15 @@ img {
 }
 
 .site-navigation li {
-  min-width: 200px;
+  min-width: 239px;
+  text-align: center;
 }
 
-.site-navigation li:nth-child(1),
 .site-navigation li:nth-child(2) {
   text-align: left;
 }
 
-.site-navigation li:nth-child(3),
-.site-navigation li:nth-child(4) {
+.site-navigation li:nth-child(3) {
   text-align: right;
 }
 
@@ -107,7 +106,6 @@ img {
 .site-navigation .site-navigation-current {
   color: #766357;
 }
-
 
 /*Стили для Footer*/
 
@@ -184,6 +182,10 @@ img {
   color: #000000;
 }
 
+.reasons-item-image img {
+  display: block;
+}
+
 .reasons-item .item-blue {
   background-color: #81b3d2;
   color: #ffffff;
@@ -202,7 +204,6 @@ img {
 .reasons-item {
   min-height: 256px;
   min-width: 400px;
-  vertical-align: center;
 }
 
 .reasons-item-wrapper {
@@ -210,10 +211,19 @@ img {
   justify-content: space-between;
 }
 
+.reasons-item-wrapper.reverse {
+  flex-direction: row-reverse;
+}
+
+.reasons-item-inner {
+  margin: auto;
+}
+
 .features-list {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  min-height: 330px;
 }
 
 .features-item {
