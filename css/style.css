@@ -22,8 +22,7 @@ a {
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+  /*max-width: 100%;*/
 }
 
 .visually-hidden {
@@ -48,7 +47,7 @@ img {
 
 
 .page-wrapper {
-  max-width: 1200px;
+  width: 1200px;
   margin: 0 auto;
   box-shadow: 0px 5px 15px 0px rgba(0, 1, 1, 0.4);
 }
@@ -74,27 +73,28 @@ img {
   justify-content: space-between;
   align-items: center;
   min-height: 56px;
-  padding: 0;
+  padding: 0 72px;
   margin: 0;
   list-style: none;
 }
 
 .site-navigation li {
-  min-width: 239px;
-  flex-basis: 239px;
-  flex-shrink: 0;
-  text-align: center;
+  /*flex-shrink: 25%;*/
+  width: 264px;
 }
 
-.site-navigation li:nth-child(3) {
-  margin-left: 244px;
+.site-navigation li:nth-child(1),
+.site-navigation li:nth-child(2) {
+  text-align: left;
+}
+
+.site-navigation li:nth-child(3),
+.site-navigation li:nth-child(4) {
+  text-align: right;
 }
 
 .site-navigation a {
   color: #000000;
-  display: block;
-  padding: 11px 15px;
-  vertical-align: middle;
 }
 
 .site-navigation a:hover,
@@ -112,14 +112,25 @@ img {
 
 /*Стили для Footer*/
 
+
 .main-footer {
+  position: absolute;
+  width: 1200px;
+  z-index: 1;
   display: flex;
-  justify-content: space-around;
   align-items: center;
   min-height: 48px;
   background-color: rgba(254, 254, 254, 0.9);
   padding-top: 34px;
   padding-bottom: 34px;
+  bottom: 0;
+  /*Пока не придумала как правильно сделать, чтобы футер прилип к низу*/
+  margin-bottom: -1755px;
+}
+
+.inner-footer {
+  position: relative;
+  bottom: none;
 }
 
 .main-footer p {
@@ -127,22 +138,35 @@ img {
   padding: 0;
 }
 
+.footer-contacts span {
+  display: block;
+  margin-bottom: 2px;
+}
+
 .footer-contacts {
+  display: flex;
+  justify-content: center;
+  width: 33.3333333%;
   font-size: 21px;
   font-weight: 700;
   line-height: 26px;
   color: #000000;
+  padding-left: 65px;
 }
 
 .footer-contacts a {
   color: #000000;
 }
 
+.footer-social {
+  width: 33.3333333%;
+  justify-content: center;
+}
+
 .social-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  width: 150px;
+  justify-content: center;
   margin: 0 auto;
   padding: 0;
   list-style: none;
@@ -154,6 +178,7 @@ img {
   justify-content: center;
   width: 46px;
   height: 48px;
+  margin-right: 6px;
   background-color: #81b3d2;
 }
 
@@ -172,16 +197,15 @@ img {
 }
 
 .footer-copyright {
-  color: #000000;
   display: flex;
-  justify-content: space-between;
-  width: 200px;
+  justify-content: center;
+  width: 33.3333333%;
+  color: #000000;
   align-items: center;
 }
 
 .copyright-link {
-  width: 115px;
-  height: 41px;
+  margin-left: 8px;
 }
 
 .copyright-link:hover path,
@@ -241,7 +265,17 @@ img {
 }
 
 .reasons-item.item-gray {
+  padding: 50px 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
   background-color: #eeeeee;
+}
+
+.reasons-item.item-gray h3 {
+  width: 150px;
+  margin: 0 auto;
 }
 
 .reasons-list {
@@ -264,8 +298,9 @@ img {
   flex-direction: row-reverse;
 }
 
-.reasons-item-inner {
-  margin: auto;
+.item-blue .reasons-item-inner {
+  padding: 45px;
+  padding-bottom: 30px;
 }
 
 .features-list {
@@ -345,6 +380,7 @@ img {
 
 .search-hotel-form-title {
   display: block;
+  position: relative;
   width: 568px;
   min-height: 86px;
   margin-right: auto;
@@ -374,9 +410,11 @@ img {
   flex-wrap: wrap;
   justify-content: space-between;
   position: absolute;
+  z-index: 2;
   width: 568px;
   height: 397px;
-  margin-left: 316px;
+  left: 50%;
+  transform: translate(-50%);
   padding: 55px;
   background-color: #ffffff;
 }
@@ -495,8 +533,12 @@ img {
 
 .filter-hotels {
   display: flex;
+  justify-content: space-between;
 }
 
+.filter-checkbox {
+  display: flex;
+}
 
 .filter-hotels fieldset {
   border: none;
@@ -517,6 +559,11 @@ img {
   font-size: 14px;
   line-height: 21px;
   color: #ffffff;
+}
+
+.filter-infrastructure,
+.filter-type-house {
+  display: flex;
 }
 
 /*Стилизация из демки*/
@@ -569,8 +616,8 @@ img {
 
 .price-controls .min-price,
 .price-controls .max-price {
-  width: 90px;
-  padding-left: 65px;
+  width: 150px;
+  padding-left: 50px;
 }
 
 .price-controls input {
@@ -739,6 +786,12 @@ img {
   padding-bottom: 30px;
   padding-left: 70px;
   padding-right: 70px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.hotel-item:last-child {
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .hotel-item-inner {
@@ -755,6 +808,8 @@ img {
 
 
 .hotel-item-title a {
+  flex-basis: 135px;
+  flex-shrink: 0;
   font-size: 21px;
   line-height: 26px;
   font-weight: 700;
@@ -772,9 +827,14 @@ img {
 
 .hotel-description {
   padding-left: 30px;
-  margin-right: 495px;
+  flex-grow: 1;
+  width: 750px;
 }
 
+.hotel-item img {
+  flex-basis: 135px;
+  flex-shrink: 0;
+}
 
 .hotel-description h3,
 .hotel-description p {
@@ -788,7 +848,8 @@ img {
 
 .hotel-type {
   display: block;
-  min-width: 115px;
+  min-width: 110px;
+  margin-right: 6px;
 }
 
 .hotel-item .hotel-more {
@@ -835,46 +896,45 @@ img {
 
 .hotel-rating {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
-  width: 110px;
 }
 
 .hotel-rating-four-star {
+  align-self: flex-end;
   width: 85px;
   height: 17px;
   background-image: url("../img/star.svg");
   background-size: 18px;
   background-repeat: space;
-  margin-bottom: 45px;
 }
 
 .hotel-rating-three-star {
+  align-self: flex-end;
   width: 60px;
   height: 17px;
   background-image: url("../img/star.svg");
   background-size: 18px;
   background-repeat: space;
-  margin-bottom: 45px;
 }
 
 .hotel-rating-two-star {
+  align-self: flex-end;
   width: 38px;
   height: 17px;
   background-image: url("../img/star.svg");
   background-size: 18px;
   background-repeat: space;
-  margin-bottom: 45px;
 }
 
 .rating-hotel-number {
-  min-width: 142px;
+  min-width: 110px;
   min-height: 27px;
-  padding: 4px 15px;
+  padding: 4px 10px;
   text-align: center;
   color: #666666;
   line-height: 20px;
   background-color: #f2f2f2;
+  margin-top: 45px;
 }
 
 
