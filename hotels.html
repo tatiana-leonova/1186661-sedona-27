@@ -34,17 +34,51 @@
       <form class="filter-hotels" method="get" action="https://echo.htmlacademy.ru">
         <div class="filter-checkbox">
           <fieldset class="filter-infrastructure">
-            <legend>Инфраструктура:</legend>
-            <label><input class="filter-hotels-input" type="checkbox" name="pool">Бассейн</label>
-            <label><input type="checkbox" name="parking">Парковка</label>
-            <label><input type="checkbox" name="wi-fi">Wi-Fi</label>
+            <legend class="filter-legend">Инфраструктура:</legend>
+            <ul class="filter-hotel-list">
+              <li class="filter-hotel-item">
+                <label class="filter-hotels-check" for="checkbox-pool">
+                  <input class="filter-hotels-input" type="checkbox" name="pool" id="checkbox-pool">
+                  <span class="filter-hotels-check-box"></span>
+                  Бассейн</label>
+              </li>
+              <li class="filter-hotel-item">
+                <label class="filter-hotels-check" for="checkbox-parking">
+                  <input class="filter-hotels-input" type="checkbox" name="parking" id="checkbox-parking" disabled>
+                  <span class="filter-hotels-check-box"></span>
+                  Парковка</label>
+              </li>
+              <li class="filter-hotel-item">
+                <label class="filter-hotels-check" for="checkbox-wi-fi">
+                  <input class="filter-hotels-input" type="checkbox" name="wi-fi" id="checkbox-wi-fi" checked disabled>
+                  <span class="filter-hotels-check-box"></span>
+                  Wi-Fi</label>
+              </li>
+            </ul>
           </fieldset>
           <fieldset class="filter-type-house">
-            <legend>Тип жилья:</legend>
-            <label><input type="checkbox" name="hotel">Гостиница</label>
-            <label><input type="checkbox" name="motel">Мотель</label>
-            <label><input type="checkbox" name="apartment">Апартаменты</label>
+            <legend class="filter-legend">Тип жилья:</legend>
 
+            <ul class="filter-hotel-list">
+              <li class="filter-hotel-item">
+                <label class="filter-hotels-check" for="checkbox-hotel">
+                  <input class="filter-hotels-input" type="checkbox" name="hotel" id="checkbox-hotel" checked>
+                  <span class="filter-hotels-check-box"></span>
+                  Гостиница</label>
+              </li>
+              <li class="filter-hotel-item">
+                <label class="filter-hotels-check" for="checkbox-motel">
+                  <input class="filter-hotels-input" type="checkbox" name="motel" id="checkbox-motel" checked>
+                  <span class="filter-hotels-check-box"></span>
+                  Мотель</label>
+              </li>
+              <li class="filter-hotel-item">
+                <label class="filter-hotels-check" for="checkbox-apartment">
+                  <input class="filter-hotels-input" type="checkbox" name="apartment" id="checkbox-apartment" checked>
+                  <span class="filter-hotels-check-box"></span>
+                  Апартаменты</label>
+              </li>
+            </ul>
           </fieldset>
         </div>
         <div class="filter-range">
@@ -62,23 +96,35 @@
               <div class="range-toggle range-toggle-max"></div>
             </div>
           </fieldset>
-          <button class="btn-transparent" type="submit">Показать</button>
+          <button class="button-transparent" type="submit">Показать</button>
         </div>
       </form>
     </section>
 
     <section class="sorting">
       <h2 class="visually-hidden">Сортировка</h2>
-      <div class="results">Найдено: 3</div>
+      <div class="sorting-results">Найдено: 3</div>
       <div class="sorting-filter">
         <span class="sorting-filter-title">Сортировка:</span>
-        <a href="#">По цене</a>
-        <a href="#">По типу</a>
-        <a href="#">По рейтингу</a>
+        <ul class="sorting-filter-list">
+          <li><a class="active" href="#">По цене</a></li>
+          <li><a href="#">По типу</a></li>
+          <li><a href="#">По рейтингу</a></li>
+        </ul>
       </div>
       <div class="sorting-arrow">
-        <a href="#" class="arrow sorting-icon-up"></a>
-        <a href="#" class="arrow-active sorting-icon-down"></a>
+        <a href="#" class="arrow sorting-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10">
+            <title>Сортировать по возрастанию</title>
+            <path fill="#cacaca" d="M5.5 0L0 10h11z"/>
+          </svg>
+        </a>
+        <a href="#" class="arrow-active sorting-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10">
+            <title>Сортировать по убыванию</title>
+            <path fill="#cacaca" d="M5.5 10L0 0h11"/>
+          </svg>
+        </a>
       </div>
     </section>
 
@@ -117,7 +163,7 @@
               <a class="button hotel-reservation" href="#">Забронировать</a>
             </div>
             <div class="hotel-rating">
-              <div class="hotel-rating-three-star" title="Количество звезд: 4"></div>
+              <div class="hotel-rating-three-star" title="Количество звезд: 3"></div>
               <div class="rating-hotel-number"><p>Рейтинг: 8,9</p></div>
             </div>
           </div>
