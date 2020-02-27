@@ -35,15 +35,6 @@ a {
   overflow: hidden;
 }
 
-/*.button {*/
-/*  font: inherit;*/
-/*  text-align: center;*/
-/*  color: #ffffff;*/
-/*  vertical-align: middle;*/
-/*  background-color: #81b3d2;*/
-/*  border: none;*/
-/*}*/
-
 .page-wrapper {
   position: relative;
   width: 1200px;
@@ -1037,6 +1028,7 @@ input[type="number"] {
 
 .sorting-filter-list {
   display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -1168,24 +1160,29 @@ input[type="number"] {
 .hotel-description p {
   margin: 0;
   padding: 0;
-  padding-bottom: 17px;
+  padding-bottom: 12px;
 }
 
 .hotel-info {
   display: flex;
+  flex-wrap: wrap;
   color: #000000;
 }
 
-.hotel-type {
+.hotel-type,
+.hotel-price {
   display: block;
   min-width: 116px;
   padding-right: 10px;
 }
 
 .hotel-item .hotel-more {
+  display: inline-block;
+  vertical-align: center;
   text-align: center;
+  max-width: 170px;
   margin-right: 4px;
-  padding: 5px 16px;
+  padding: 4px 16px;
   color: #ffffff;
   font-weight: 700;
   background-color: #81b3d2;
@@ -1202,8 +1199,12 @@ input[type="number"] {
 }
 
 .hotel-item .hotel-reservation {
-  padding: 5px 16px;
+  display: inline-block;
+  vertical-align: center;
   text-align: center;
+  max-width: 170px;
+  margin-right: 4px;
+  padding: 4px 16px;
   color: #ffffff;
   font-weight: 700;
   background-color: #766357;
@@ -1272,7 +1273,6 @@ input[type="number"] {
 
 .rating-hotel-number {
   min-width: 110px;
-  height: 27px;
   padding: 4px 10px;
   text-align: center;
   color: #666666;
