@@ -432,6 +432,7 @@ a {
 
 .search-hotel-form-title {
   display: block;
+  z-index: 4;
   text-align: center;
   width: 568px;
   min-height: 86px;
@@ -474,13 +475,13 @@ a {
 }
 
 .form-error {
-  animation: shake 0.6s;
+  animation: shake 0.5s;
 }
 
 @keyframes shake {
   0%,
   100% {
-    transform: translateX(-49%);
+    transform: translateX(-4px);
   }
 
   10%,
@@ -488,17 +489,16 @@ a {
   50%,
   70%,
   90% {
-    transform: translateX(-51%);
+    transform: translateX(0);
   }
 
   20%,
   40%,
   60%,
   80% {
-    transform: translateX(-49%);
+    transform: translateX(4px);
   }
 }
-
 
 .search-hotel-form {
   position: absolute;
@@ -506,8 +506,11 @@ a {
   flex-wrap: wrap;
   justify-content: space-between;
   z-index: 3;
-  left: 50%;
-  transform: translateX(-50%);
+  /*left: 50%;*/
+  /*transform: translateX(-50%);*/
+  right: 0;
+  left: 0;
+  margin: 0 auto;
   width: 568px;
   height: 395px;
   padding: 55px;
@@ -515,7 +518,15 @@ a {
   background-color: #ffffff;
   box-shadow: 0px 7px 15px 0 rgba(0, 1, 1, 0.15);
 
+  /*Для анимации*/
+  -webkit-animation: show;
+  animation: show;
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
 }
+
 
 /*Форма*/
 
@@ -575,15 +586,23 @@ a {
   border: 0;
 }
 
-/*input[type="text"]::-webkit-input-placeholder,*/
-/*input[type="text"]:-ms-input-placeholder {*/
-/*  color: #000000;*/
-/*}*/
-
-
-.search-hotel-form input[type="text"]::placeholder{
+input[type="text"]::-webkit-input-placeholder {
   color: #000000;
-  font-weight: 700;
+  opacity: 1;
+}
+input[type="text"]::-moz-placeholder {
+  color: #000000;
+  opacity: 1;
+}
+input[type="text"]:-ms-input-placeholder {
+  color: #000000;
+}
+input[type="text"]::-ms-input-placeholder {
+  color: #000000;
+  opacity: 1;
+}
+input[type="text"]::placeholder {
+  color: #000000;
 }
 
 .search-hotel-form input[type="number"] {

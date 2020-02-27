@@ -2,21 +2,14 @@ var searchLink = document.querySelector(".search-hotel-form-title");
 var searchForm = document.querySelector(".search-hotel-form");
 
 function changeState () {
-  searchForm.classList.toggle('hide');
   // searchForm.classList.toggle('show');
+  searchForm.classList.toggle('hide');
 }
 
 searchLink.onclick = function (evt) {
   changeState();
   evt.preventDefault();
 };
-
-
-// searchLink.onclick = function (evt) {
-//   searchForm.classList.toggle('show');
-//   searchForm.classList.toggle('hide');
-//   evt.preventDefault();
-// };
 
 searchForm.addEventListener("submit", function (evt) {
   var isFormValid = checkFieldValid(document.getElementById("checkin-date"))
