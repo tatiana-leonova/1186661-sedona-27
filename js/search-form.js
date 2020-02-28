@@ -2,8 +2,7 @@ var searchLink = document.querySelector(".search-hotel-form-title");
 var searchForm = document.querySelector(".search-hotel-form");
 
 function changeState () {
-  // searchForm.classList.toggle('show');
-  searchForm.classList.toggle('hide');
+  searchForm.classList.toggle('form-hidden');
 }
 
 searchLink.onclick = function (evt) {

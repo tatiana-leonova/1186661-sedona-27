@@ -74,15 +74,15 @@ a {
   margin-right: auto;
 }
 
-.site-navigation li:nth-child(4n-3) a,
-.site-navigation li:nth-child(4n-2) a {
+.site-navigation li:nth-child(4n-3),
+.site-navigation li:nth-child(4n-2) {
   display: block;
   padding-left: 72px;
   text-align: left;
 }
 
-.site-navigation li:nth-child(4n-1) a,
-.site-navigation li:nth-child(4n) a {
+.site-navigation li:nth-child(4n-1),
+.site-navigation li:nth-child(4n) {
   display: block;
   padding-right: 72px;
   text-align: right;
@@ -101,7 +101,7 @@ a {
   color: rgba(0, 0, 0, 0.3);
 }
 
-.site-navigation .site-navigation-current {
+.site-navigation .site-navigation-active {
   color: #766357;
 }
 
@@ -385,7 +385,6 @@ a {
   margin: -5px auto 30px auto;
   background-image: url("../img/icon-souvenirs-3.svg");
   background-repeat: no-repeat;
-
 }
 
 .features-item p {
@@ -447,26 +446,34 @@ a {
   background-color: #503e33;
 }
 
-/*Анимация формы*/
-
-.hide {
-  visibility: hidden;
-}
-
-@-webkit-keyframes show {
-  0% {
-    -webkit-transform: translateY(-100px);
-    transform: translateY(-100px);
-  }
-
-  100% {
-    -webkit-transform: translateY(0%);
-    transform: translateY(0%);
-  }
-}
-
 .form-error {
   animation: shake 0.5s;
+}
+
+.search-hotel-form {
+  position: absolute;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  z-index: 3;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  width: 568px;
+  height: 395px;
+  padding: 55px;
+  padding-top: 40px;
+  background-color: #ffffff;
+  box-shadow: 0px 7px 15px 0 rgba(0, 1, 1, 0.15);
+  transition: height 0.4s;
+}
+
+.form-hidden {
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: height 0.4s;
 }
 
 @keyframes shake {
@@ -491,36 +498,7 @@ a {
   }
 }
 
-.search-hotel-form {
-  position: absolute;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  z-index: 3;
-  /*left: 50%;*/
-  /*transform: translateX(-50%);*/
-  right: 0;
-  left: 0;
-  margin: 0 auto;
-  width: 568px;
-  height: 395px;
-  padding: 55px;
-  padding-top: 40px;
-  background-color: #ffffff;
-  box-shadow: 0px 7px 15px 0 rgba(0, 1, 1, 0.15);
-
-  /*Для анимации*/
-  -webkit-animation: show;
-  animation: show;
-  -webkit-animation-duration: 0.7s;
-  animation-duration: 0.7s;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-}
-
-
 /*Форма*/
-
 .checkin,
 .checkout {
   position: relative;
@@ -581,17 +559,21 @@ input[type="text"]::-webkit-input-placeholder {
   color: #000000;
   opacity: 1;
 }
+
 input[type="text"]::-moz-placeholder {
   color: #000000;
   opacity: 1;
 }
+
 input[type="text"]:-ms-input-placeholder {
   color: #000000;
 }
+
 input[type="text"]::-ms-input-placeholder {
   color: #000000;
   opacity: 1;
 }
+
 input[type="text"]::placeholder {
   color: #000000;
 }
@@ -644,9 +626,9 @@ input[type="text"]::placeholder {
   border: 0;
   text-align: center;
   font-size: 14px;
-  outline: none;
   background: rgb(242, 242, 242);
   cursor: pointer;
+  outline: none;
 }
 
 .button-minus::after {
@@ -751,9 +733,9 @@ input[type="text"]::placeholder {
 }
 
 .filter-hotel-list {
-  list-style: none;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 .filter-checkbox {
@@ -810,10 +792,10 @@ input[type="text"]::placeholder {
 }
 
 .filter-hotels-input {
-  position: absolute;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  position: absolute;
   clip: rect(0 0 0 0);
 }
 
@@ -841,7 +823,6 @@ input[type="text"]::placeholder {
   background-repeat: no-repeat;
 }
 
-
 .filter-hotels-input:focus + .filter-hotels-check-box {
   outline: -webkit-focus-ring-color auto 5px;
 }
@@ -862,13 +843,13 @@ input[type="text"]::placeholder {
 
 .price-controls {
   position: relative;
+  box-sizing: content-box;
   height: 33px;
   width: 314px;
   margin-bottom: 20px;
   font-size: 0;
   border: 2px solid #ffffff;
   border-radius: 2px;
-  box-sizing: content-box;
 }
 
 .price-controls::after {
@@ -884,9 +865,9 @@ input[type="text"]::placeholder {
 
 .price-controls label {
   display: inline-block;
+  vertical-align: top;
   font-size: 14px;
   line-height: 33px;
-  vertical-align: top;
   cursor: pointer;
 }
 
@@ -1088,9 +1069,9 @@ input[type="number"] {
 
 /*Отели*/
 .hotel-list {
-  list-style: none;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 .hotel-item {
@@ -1109,8 +1090,6 @@ input[type="number"] {
 
 .hotel-item-inner {
   display: flex;
-  /*min-width: 255px;*/
-  /*!*min-height: 90px;*!*/
 }
 
 .hotel-item p,
