@@ -488,10 +488,12 @@ a {
   padding-top: 30px;
   padding-bottom: 30px;
   font-size: 21px;
+  text-transform: uppercase;
   font-weight: 700;
   line-height: 26px;
   color: #ffffff;
   background-color: #766357;
+  border: none;
 }
 
 .search-hotel-form-title:hover,
